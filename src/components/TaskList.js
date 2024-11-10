@@ -1,7 +1,6 @@
 import React, { useState, useEffect} from "react";
 import '../App.css';
 import {Box, List, ListItem, ListItemText, IconButton} from '@mui/material';
-import DeleteIcon from '@mui/icons-material/Delete';
 
 function TaskList() {
     const [tasks, setTasks] = useState([]);
@@ -16,7 +15,8 @@ function TaskList() {
     }, []);
 
     return (
-        <Box sx={{ width: '100%', maxWidth: 360, bgcolor: '#64b5f6', borderRadius: 4}}>
+        <Box display={"flex"} justifyContent={"center"} alignItems={"center"} paddingTop={"50px"}>
+            <Box sx={{ width: '100%', maxWidth: 360, bgcolor: '#64b5f6', borderRadius: 4}}>
             {tasks.map(task => (
                     <List>
                         <ListItem key={task._id}>
@@ -31,6 +31,8 @@ function TaskList() {
                     </List>
                 ))}
         </Box>
+        </Box>
+        
     );
     
 };
